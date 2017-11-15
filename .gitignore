@@ -269,3 +269,6 @@ $RECYCLE.BIN/
 
 # API Key
 api/
+
+# VS Code
+.vscode
