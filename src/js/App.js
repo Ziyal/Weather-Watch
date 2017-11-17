@@ -1,13 +1,14 @@
 import React from 'react';
 import data from './data/Data'
 import Navbar from './components/navbar'
-import ApiKey from './utilities/api'
+import ApiKey from './api/api'
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      zipcode: "",
       forecast: [],
       api: ApiKey
     }
@@ -20,10 +21,9 @@ class App extends React.Component {
 
 
   fetchData() {
-    const {api} = this.state;
-    console.log(api);
+    const {api, zipcode} = this.state;
     
-    fetch("http://api.openweathermap.org/data/2.5/forecast?zip=98101,us&APPID="+api)
+    fetch("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&APPID="+api)
       .then(response => response.json())
       .then(parsedJSON => parsedJSON.list.map(data => ({
           city: `${data.main.temp_min}`,
@@ -36,7 +36,20 @@ class App extends React.Component {
       .catch(error => console.log("Parsing failed: " + error))
   }
 
+  onZipcodeChange(e) {
+    // Get zipcode from state
+    const {zipcode} = this.state;
+
+    // Get data from input
+    const newZip = e.target.value;
+
+    // update state with new zipcode
+    this.setState({zipcode: newZip})
+
+  }
+
   render(){
+    const {zipcode} = this.state;
 
     return (
       <div>
@@ -46,8 +59,9 @@ class App extends React.Component {
         </header>
         <div className="content">
           
-        <input type="text" placeholder="zip code"/>
-        <button className="btn btn-lg btn-success" onClick={(e) => {this.fetchData()}}>Get Weather</button>
+          <input type="text" placeholder="zip code" onChange={(e) => {this.onZipcodeChange(e);}}/>
+          <button className="btn btn-lg btn-success" onClick={(e) => {this.fetchData();}}>Get Weather</button>
+          <h3>{zipcode}</h3>
 
         </div>
       </div>
