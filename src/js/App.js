@@ -23,14 +23,14 @@ class App extends React.Component {
   fetchData() {
     const {api, zipcode} = this.state;
     
-    fetch("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&cnt=8&APPID="+api)
+    fetch("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&cnt=8&units=imperial&APPID="+api)
       .then(response => response.json())
       .then(parsedJSON => parsedJSON.list.map(data => ({
           date: `${data.dt}`,
           city: `${parsedJSON.city.name}`,
           weather: `${data.weather[0].main}`,
           weatherDescription: `${data.weather[0].description}`,
-          minTemp: `${data.main.temp_min}`,
+          temp: Math.round(`${data.main.temp}`),
       })))
       .then(forecast => this.setState ({forecast}))
       .catch(error => console.log("Parsing failed: " + error))
@@ -63,15 +63,15 @@ class App extends React.Component {
           <button className="btn btn-lg btn-success" onClick={(e) => {this.fetchData();}}>Get Weather</button>
           {
             forecast ? forecast.map(singleForecast => {
-              const {date, city, weather, weatherDescription, minTemp, icon} = singleForecast;
+              const {date, city, weather, weatherDescription, temp, icon} = singleForecast;
 
               return(
                 <div key={date} className="weather-forecast">
-                  <h2>{weather}</h2>
-                  <img src={require(`../images/${weather}.png`)}/>
-                  <h2>{weatherDescription}</h2>
-                  <h2>{minTemp}</h2>
-                  <Timestamp time={date} format='full'/>
+                  {/*<h2>{weather}</h2>*/}
+                  <img src={require(`../images/${weather}.png`)} alt={`Weather Forecast: ${weatherDescription}`}/>
+                  <h2 className="weather-description">{weatherDescription}</h2>
+                  <p className="temp">{temp}&deg;F</p>
+                  <Timestamp time={date} format='full' className="date"/>
                   <hr/>
                 </div>
               )
