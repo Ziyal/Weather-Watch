@@ -1,7 +1,9 @@
 import React from 'react';
 import data from './data/Data'
 import Navbar from './components/navbar'
+import Forecast from './components/forecast'
 import ApiKey from './api/api'
+const Timestamp = require('react-timestamp');
 
 class App extends React.Component {
 
@@ -14,23 +16,21 @@ class App extends React.Component {
     }
   }
 
-  
   // componentDidMount() {
   //   this.fetchData();
   // }
 
-
   fetchData() {
     const {api, zipcode} = this.state;
     
-    fetch("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&APPID="+api)
+    fetch("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&cnt=8&APPID="+api)
       .then(response => response.json())
       .then(parsedJSON => parsedJSON.list.map(data => ({
-          city: `${data.main.temp_min}`,
+          date: `${data.dt}`,
+          city: `${parsedJSON.city.name}`,
           weather: `${data.weather[0].main}`,
           weatherDescription: `${data.weather[0].description}`,
           minTemp: `${data.main.temp_min}`,
-          maxTemp: `${data.main.temp_max}`,
       })))
       .then(forecast => this.setState ({forecast}))
       .catch(error => console.log("Parsing failed: " + error))
@@ -45,11 +45,12 @@ class App extends React.Component {
 
     // update state with new zipcode
     this.setState({zipcode: newZip})
-
   }
 
+
   render(){
-    const {zipcode} = this.state;
+    // Get zip code and forecast from state
+    const {zipcode, forecast} = this.state;
 
     return (
       <div>
@@ -58,10 +59,24 @@ class App extends React.Component {
           <h1>Weather Wear</h1>
         </header>
         <div className="content">
-          
           <input type="text" placeholder="zip code" onChange={(e) => {this.onZipcodeChange(e);}}/>
           <button className="btn btn-lg btn-success" onClick={(e) => {this.fetchData();}}>Get Weather</button>
-          <h3>{zipcode}</h3>
+          {
+            forecast ? forecast.map(singleForecast => {
+              const {date, city, weather, weatherDescription, minTemp, icon} = singleForecast;
+
+              return(
+                <div key={date} className="weather-forecast">
+                  <h2>{weather}</h2>
+                  <img src={require(`../images/${weather}.png`)}/>
+                  <h2>{weatherDescription}</h2>
+                  <h2>{minTemp}</h2>
+                  <Timestamp time={date} format='full'/>
+                  <hr/>
+                </div>
+              )
+            }) : null
+          }
 
         </div>
       </div>

@@ -37,6 +37,7 @@
   "dependencies": {
     "prop-types": "15.5.10",
     "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "react-dom": "15.4.2",
+    "react-timestamp": "^4.3.0"
   }
 }
