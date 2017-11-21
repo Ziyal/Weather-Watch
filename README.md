@@ -12,9 +12,9 @@ __To-Do:__
 * styling
 * ~~put API Key in hidden file~~
 
-![Weather Wear](https://github.com/Ziyal/Weather-Wear/blob/master/screenshots/1.jpg "Weather Wear")
-![Weather Wear](https://github.com/Ziyal/Weather-Wear/blob/master/screenshots/2.jpg "Weather Wear")
-![Weather Wear](https://github.com/Ziyal/Weather-Wear/blob/master/screenshots/3.jpg "Weather Wear")
+![Weather Wear](https://github.com/Ziyal/Weather-Wear/blob/master/screenshots/1.png "Weather Wear")
+![Weather Wear](https://github.com/Ziyal/Weather-Wear/blob/master/screenshots/2.png "Weather Wear")
+![Weather Wear](https://github.com/Ziyal/Weather-Wear/blob/master/screenshots/3.png "Weather Wear")
 
 __Built With:__
 * React
