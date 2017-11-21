@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
+$title-font: 'Raleway', sans-serif;
 
 .main-container {    
     display: flex;
@@ -6,74 +8,103 @@
     align-items: center;
     height:100vh;
 
-    background-color: grey;
-    // background: url('../images/backgrounds/Rainbow.jpg');
-    // background-size: 100%;
-    // &.Clear {background-image: url('../images/backgrounds/Clear.jpg')}
-    // &.Clouds {background-image: url('../images/backgrounds/Clouds.jpg')}
-    // &.Rain {background-image: url('../images/backgrounds/Rain.jpg')}
-    
-    .navbar {
-        height: 75px;
-        background-color: grey;
-        .nav-title {
-            font-size: 2.5em;
-        }
+    background-size: 100%;
+    &.Rainbow {background-image: url('../images/backgrounds/Rainbow.jpg')}
+    &.Clear {background-image: url('../images/backgrounds/Clear.jpg')}
+    &.Clouds {background-image: url('../images/backgrounds/Clouds.jpg')}
+    &.Rain {background-image: url('../images/backgrounds/Rain.jpg')}
+
+    h1 {
+        font-family: $title-font;
+        font-weight: bold;
     }
 
+    p {
+        font-family: $title-font;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 3.5em;
+        color: #fff;
+        margin: 15px 0px 5px 0px;
+    }
+
+    // ----- BODY -----
     .white-container {
-            align-items: center;
-            width: 75%;
-            height: 75%;
-            margin: 15px;
-            background-color: rgba(255, 255, 255, 0.8); /* FF3.6-15 */
-            // background: -webkit-linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%);
-            // background: -moz-linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%);
-            // background: -o-linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%);
-            // background: linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            border-radius: 10px;
-    
-            .search-container {
+        align-items: center;
+        width: 75%;
+        // height: 75%;
+        max-width: 730px;
+        margin: 0px 15px 15px 15px;
+        background-color: rgba(255, 255, 255, .9); /* FF3.6-15 */
+        border-radius: 10px;
+
+        // ----- RESULTS -----
+        .city-title {
+            text-align: center;
+        }
+
+        .results-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            // Hour Forecast
+            .weather-forecast {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                max-width: 300px;
-                margin: 20px;
-    
-                .zip-title {
+                text-align: center;
+                margin: 8px;
+
+                .date {
+                    text-align: center;
+                    font-style: italic;
                     font-size: 1.5em;
                 }
-                .zip-input {
-                    max-width: 200px;
-    
+                .weather-img {
+                    margin: 10px 0px 10px 0px;
                 }
-                .zip-btn {
-                    max-width: 100px;
+                .weather-description {
+                    font-weight: bold;
+                    font-size: 1.3em;
+                }
+                .temperature {
+                    font-weight: bold;
                 }
             }
         }
 
+        // ----- ADVICE  -----
+        .advice-container {
+            text-align: center;
+            margin: 20px;
 
-
-    .results-container {
-        .city-title {
-            
-        }
-        .weather-forecast {
-            .weather-img {
-
-            }
-            .weather-description {
-
-            }
-            .temperature {
-
-            }
-            .date {
-
+            .advice-text {
+                font-size: 1.6em;
             }
         }
+
+        // ----- SEARCH -----
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0px 20px 0px;
+            width: 100%;
+
+            .zip-title {
+                font-size: 1.5em;
+            }
+            .zip-input {
+                max-width: 200px;
+            }
+            .zip-btn {
+                max-width: 100px;
+                margin: 5px;
+            }
+        }
+
     }
-
 
 }
