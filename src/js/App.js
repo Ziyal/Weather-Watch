@@ -64,45 +64,41 @@ class App extends React.Component {
 
     // Temp based statements
     if(temp <= 32) {
-      const options = ["Burrrr! It be chilly out there. Remember your winter parka. ", "It's crazy cold out there. Don't forget your hat, scarf, and gloves. You don't wanna turn into a human popsicle out there! "]
+      const options = ["Burrrr! It be chilly out there. Remember your winter coat if you don't want to freeze. A hat and scarf would be a good idea too.  ", "Don't forget your hat, scarf, and gloves. You don't wanna turn into a human popsicle out there! "]
       newAdvice += options[rand1];
     }
 
     else if(temp > 32 && temp < 45) {
-      const options = ["A fuzzy hat and scarf would probably be nice. ", "Time to bring out the winter coat! ", "It be chilly out there! "]
+      const options = ["A fuzzy hat and scarf would probably be nice. ", "It's cold out today, so remember a warm jacket. "]
       newAdvice += options[rand1];
     }
 
     else if(temp >= 45 && temp < 65) {
-      const options = ["A light jacked would be a good choice. ", "It's not too bad out there. "]
+      const options = ["A light jacket would be a good choice. ", "It's not too bad out there. "]
       newAdvice += options[rand1];
     }
 
     else if(temp >= 65 && temp < 85) {
-      const options = ["It's pretty hot out there, remember to wear something light and airy. ", "Remember the sunscreen! It's warm out there.", "Ahhhh, nice and toasty. No need for a jacket, it's plenty warm out there. ", "Time to break out your favorite pair of shorts! Booyah! "]
+      const options = ["It's pretty hot out there, remember to wear something light and airy. ", "Ahhhh, nice and toasty. No need for a jacket, it's plenty warm out there. "]
       newAdvice += options[rand1];
     }
 
     else if(temp > 85) {
-      const options = ["Dang, it be hot out there! You should head to the beach or something. ", "It be crazy hot out there, remember to stay hydrated! "]
+      const options = ["It's hot out there! Something light and airy would be best to help you stay cool. And remember to stay hydrated!",]
       newAdvice += options[rand1];
     }
 
     // Weather based statements
     if(weather === "Rain") {
-      const options = ["If you don't wanna become a soggy pancake, your should remember your rain jacket. ", "An umbrella might be a good choice today. ", "Yup, that's definitely rain out there. Prepare to get wet! "]
+      const options = ["If you don't wanna get soggy, your should remember an umbrella or rain jacket. ", "It's pretty wet out there, you might want an umbrella. ", "Yup, that's definitely rain out there. Prepare to get wet! "]
       newAdvice += options[rand2];
     }
 
     else if(weather === "Clear") {
-      const options = ["Ahhhh, nice and sunny out there! Go soak in some of those rays. ", "A beautiful clear day out there. ", "'I'm walking on sunshine, and don't it feel good!' ", "Those blue skies sure are shining on me! "]
+      const options = ["Go soak in some of those rays. ", "Enjoy the blue skies! ", "It'd be a great day to enjoy some time outdoors. "]
       newAdvice += options[rand2];
     }
 
-    if(weather === "Clouds") {
-      const options = ["The sky is filled with clouds out there. ", "Not much blue left in the sky today. ", "There's white fluffy stuff up in the sky today. "]
-      newAdvice += options[rand2];
-    }
 
     console.log(newAdvice);
     return newAdvice;
