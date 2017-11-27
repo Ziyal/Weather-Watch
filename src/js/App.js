@@ -112,7 +112,7 @@ class App extends React.Component {
       <div className={`main-container ${background}`}>
         {/*<Navbar/>*/}
         
-        <h1 className="title">Weather Wear</h1>
+        <h1 className="title">Weather Watch</h1>
         <div className="white-container">
 
           {
