@@ -1,7 +1,6 @@
 import React from 'react';
-import Navbar from './components/navbar'
-import Forecast from './components/forecast'
-import ApiKey from './api/api'
+import Forecast from './forecast';
+import ApiKey from '../api/api';
 const Timestamp = require('react-timestamp');
 
 class App extends React.Component {
@@ -22,7 +21,7 @@ class App extends React.Component {
     const {api, zipcode, background, location, adviceData} = this.state;
     
     
-    fetch("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&cnt=5&units=imperial&APPID="+api)
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zipcode},us&cnt=5&units=imperial&APPID=${api}`)
       .then(response => response.json())
       .then(parsedJSON => parsedJSON.list.map(data => ({
           date: `${data.dt}`,
@@ -110,7 +109,6 @@ class App extends React.Component {
 
     return (
       <div className={`main-container ${background}`}>
-        {/*<Navbar/>*/}
         
         <h1 className="title">Weather Watch</h1>
         <div className="white-container">

@@ -7,9 +7,18 @@ __Built With:__
 * SASS
 * Webpack
 
-![Weather Wear](https://github.com/Ziyal/Weather-Watch/blob/master/screenshots/1.png "Weather Wear")
-![Weather Wear](https://github.com/Ziyal/Weather-Watch/blob/master/screenshots/2.png "Weather Wear")
-![Weather Wear](https://github.com/Ziyal/Weather-Watch/blob/master/screenshots/3.png "Weather Wear")
+#### Run Weather Watch
+
+```
+> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
+> cd Weather-Watch
+> npm install
+> npm start
+```
+
+![Weather Watch](https://github.com/Ziyal/Weather-Watch/blob/master/screenshots/1.png "Weather Watch")
+![Weather Watch](https://github.com/Ziyal/Weather-Watch/blob/master/screenshots/2.png "Weather Watch")
+![Weather Watch](https://github.com/Ziyal/Weather-Watch/blob/master/screenshots/3.png "Weather Watch")
 
 __To-Do:__ 
 * ~~search API via zip code from input~~
@@ -20,3 +29,7 @@ __To-Do:__
 * ~~display clothing suggestions~~
 * ~~styling~~
 * ~~put API Key in hidden file~~
+* make commentary a component
+* change results from loop to component
+* clean up code
+* change input to form

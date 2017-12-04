@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-size: 100%;
+}
+.main-container.Rainbow {
+  background-image: url("../src/images/backgrounds/Rainbow.jpg");
+}
+.main-container.Clear {
+  background-image: url("../src/images/backgrounds/Clear.jpg");
+}
+.main-container.Clouds {
+  background-image: url("../src/images/backgrounds/Clouds.jpg");
+}
+.main-container.Rain {
+  background-image: url("../src/images/backgrounds/Rain.jpg");
+}
+.main-container h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+.main-container p {
+  font-family: "Raleway", sans-serif;
+}
+.main-container .title {
+  text-align: center;
+  font-size: 3.5em;
+  color: #fff;
+  margin: 15px 0px 5px 0px;
+}
+
+/* ----- BODY -----*/
+.main-container .white-container {
+  align-items: center;
+  width: 75%;
+  max-width: 730px;
+  margin: 0px 15px 15px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* FF3.6-15 */
+  border-radius: 10px;
+}
+
+/* ----- Results -----*/
+.main-container .white-container .city-title {
+  text-align: center;
+}
+.main-container .white-container .results-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Hourly forecast*/
+.main-container .white-container .results-container .weather-forecast {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 8px;
+}
+.main-container .white-container .results-container .weather-forecast .date {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.5em;
+}
+.main-container .white-container .results-container .weather-forecast .weather-img {
+  margin: 10px 0px 10px 0px;
+}
+.main-container .white-container .results-container .weather-forecast .weather-description {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.main-container .white-container .results-container .weather-forecast .temperature {
+  font-weight: bold;
+}
+
+/* ----- COMMENTARY -----*/
+.main-container .white-container .advice-container {
+  text-align: center;
+  margin: 20px;
+}
+.main-container .white-container .advice-container .advice-text {
+  font-size: 1.6em;
+}
+
+/* ----- SEARCH -----*/
+.main-container .white-container .search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px 20px 0px;
+  width: 100%;
+}
+.main-container .white-container .search-container .zip-title {
+  font-size: 1.5em;
+}
+.main-container .white-container .search-container .zip-input {
+  text-align: center;
+  max-width: 200px;
+}
+.main-container .white-container .search-container .zip-btn {
+  /*max-width: 100px;*/
+  margin: 5px;
+}
