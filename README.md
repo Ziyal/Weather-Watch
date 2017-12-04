@@ -10,7 +10,7 @@ __Built With:__
 #### Run Weather Watch
 
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
+> git clone https://github.com/Ziyal/Weather-Watch
 > cd Weather-Watch
 > npm install
 > npm start
