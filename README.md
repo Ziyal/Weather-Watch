@@ -4,8 +4,7 @@ Weather forecast for the day with comments based off the current forecast. It ut
 
 __Built With:__
 * React
-* SASS
-* Webpack
+* Bootstrap/CSS
 
 #### Run Weather Watch
 
